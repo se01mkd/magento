@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mages_Contact>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mages_Contact>
+    </modules>
+</config>

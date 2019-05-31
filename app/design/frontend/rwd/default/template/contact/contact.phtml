@@ -1,0 +1,58 @@
+
+<div class="page-title">
+
+    <h1><?php echo Mage::helper('contact')->__('Contact Us') ?></h1>
+</div>
+<style>
+    input,textarea   {
+        float: right;
+    }
+    .field{
+        margin: 10px;
+    }
+    .field > label
+    {
+        padding: 8px 8px 8px 0;
+    }
+</style>
+<form action="<?php echo $this->getFormAction() ?>" id="contactForm" method="post" class="scaffold-form ">
+    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+
+    <div class="fieldset">
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="name" class="required"><em>*</em><?php echo $this->__('Name') ?></label>
+                        <input name="name" id="name" title="<?php echo $this->__('Name') ?>" value="" class="input-text required-entry" type="text" />
+                </div>
+                <div class="field">
+                    <label for="email" class="required"><em>*</em><?php echo $this->__('Email') ?></label>
+                        <input name="email" id="email" title="<?php echo $this->__('Email') ?>" value="" class="input-text required-entry validate-email" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" />
+                </div>
+            </li>
+            <li>
+
+                <div class="field">
+                <label for="telephone"><?php echo $this->__('Telephone') ?></label>
+                    <input name="telephone" id="telephone" title="<?php echo $this->__('Telephone') ?>" value="" class="input-text validate-phoneLax" type="tel" />
+                </div>
+            </li>
+            <li class="wide">
+
+                <div class="field">
+                <label for="comment" class="required"><em>*</em><?php echo $this->__('Content') ?></label>
+                    <textarea name="content" id="comment" title="<?php echo $this->__('Content') ?>" class="required-entry input-text" cols="1" rows="2"></textarea>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set" >
+        <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+    //]]>
+</script>

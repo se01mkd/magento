@@ -1,0 +1,48 @@
+<!-- Page Title -->
+<div class="page-title">
+    <h2><?php echo $this->__('List Contacts') ?></h2>
+</div>
+<?php
+//    dd($this->getListsContact())
+?>
+<form action="" class="form form-inline">
+    <input type="search" value="<?php
+        echo $this->getRequest()->getParam('search');
+    ?>" name="search" class="form-control" placeholder="<?php
+        echo $this->__('Search Name or Email here');
+    ?>
+    ">
+    <button type="submit" title="<?php echo $this->__('Find') ?>" class="button"><span><?php echo $this->__('Find') ?></span></button>
+
+</form>
+<table id="contacts" class="data-table">
+    <colgroup>
+        <col width="1">
+        <col>
+        <col width="1">
+        <col width="1">
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="first last">
+        <th><?php echo $this->__('No.')?></th>
+        <th width="25%"><?php echo $this->__('Name')?></th>
+        <th><?php echo $this->__('Email')?></th>
+        <th><?php echo $this->__('Sent Date')?>  </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <?php $i=0; foreach($this->getListsContact() as $contact): $i++ ?>
+        <tr>
+            <td><?php
+                echo $i;
+            ?>
+            </td>
+            <td><?php echo $contact->getData('name')?></td>
+            <td><?php echo $contact->getData('email')?></td>
+            <td><?php echo Mage::getModel('core/date')->date('d/m/Y',$contact->getData('created_at'))?></td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>

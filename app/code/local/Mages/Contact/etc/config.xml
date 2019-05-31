@@ -1,0 +1,106 @@
+<config>
+    <modules>
+        <Mages_Contact>
+            <version>0.1.2</version>
+        </Mages_Contact>
+    </modules>
+    <frontend>
+        <routers>
+            <contact>
+                <use>standard</use>
+                <args>
+                    <module>Mages_Contact</module>
+                    <frontName>contact</frontName>
+                </args>
+            </contact>
+        </routers>
+        <layout>
+            <updates>
+                <contact>
+                    <file>contact.xml</file>
+                </contact>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <contact>
+                    <files>
+                        <node_name>Mages_Contact.csv</node_name>
+                    </files>
+                </contact>
+            </modules>
+        </translate>
+    </frontend>
+
+
+    <global>
+        <blocks>
+            <contact>
+                <class>Mages_Contact_Block</class>
+            </contact>
+        </blocks>
+        <helpers>
+            <contact>
+                <class>Mages_Contact_Helper</class>
+            </contact>
+        </helpers>
+
+        <models>
+            <contact>
+                <class>Mages_Contact_Model</class>
+
+                <resourceModel>contact_resource</resourceModel>
+
+            </contact>
+            <contact_resource>
+                <class>Mages_Contact_Model_Resource</class>
+                <entities>
+                    <contact>
+                        <table>contact</table>
+                    </contact>
+                </entities>
+            </contact_resource>
+
+        </models>
+        <resources>
+            <contact_setup>
+                <setup>
+                    <module>Mages_Contact</module>
+                    <class>Mages_Contact_Model_Resource_Setup</class>
+                </setup>
+            </contact_setup>
+        </resources>
+
+
+
+        <blocks>
+            <contact>
+                <class>Mages_Contact_Block_Adminhtml</class>
+            </contact>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mages_contact before="Mage_Adminhtml">Mages_Contact_Adminhtml</mages_contact>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <contact>
+                    <file>contact.xml</file>
+                </contact>
+            </updates>
+        </layout>
+    </adminhtml>
+
+
+
+
+</config>

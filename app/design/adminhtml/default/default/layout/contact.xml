@@ -1,0 +1,7 @@
+<layout version="0.1.0">
+    <adminhtml_contact_index>
+        <reference name="content">
+            <block type="contact/contact" name="contact"/>
+        </reference>
+    </adminhtml_contact_index>
+</layout>
