@@ -2,7 +2,7 @@
 class Mages_Contact_Block_Adminhtml_Contact extends Mage_Adminhtml_Block_Widget_Grid_Container {
     public function __construct()
     {
-        $this->_blockGroup = 'contact';
+        $this->_blockGroup = 'adminhtml_contact';
         $this->_controller = 'contact';
         $this->_headerText = $this->__('Contact');
 

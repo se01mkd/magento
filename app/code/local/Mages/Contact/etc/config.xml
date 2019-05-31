@@ -39,6 +39,11 @@
                 <class>Mages_Contact_Block</class>
             </contact>
         </blocks>
+        <blocks>
+            <adminhtml_contact>
+                <class>Mages_Contact_Block_Adminhtml</class>
+            </adminhtml_contact>
+        </blocks>
         <helpers>
             <contact>
                 <class>Mages_Contact_Helper</class>
@@ -72,12 +77,6 @@
         </resources>
 
 
-
-        <blocks>
-            <contact>
-                <class>Mages_Contact_Block_Adminhtml</class>
-            </contact>
-        </blocks>
     </global>
     <admin>
         <routers>
